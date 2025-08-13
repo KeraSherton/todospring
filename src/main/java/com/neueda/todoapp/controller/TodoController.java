@@ -22,5 +22,8 @@ public class TodoController {
     public Task getTask(@PathVariable String id) {
     return todoService.getTask(id);
 }
-
+@PostMapping
+    public Task addTask(@RequestBody Task task){
+    return todoService.addTask(task);
+}
 }
