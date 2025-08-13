@@ -21,7 +21,7 @@ public class TodoService {
         return todoRepository.findAll();
     }
 
-    public Task getTask(String id) {
+    public Task getTask(Long id) {
         return todoRepository.getById(id);
     }
 
