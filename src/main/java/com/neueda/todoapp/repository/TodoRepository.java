@@ -5,9 +5,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface TodoRepository extends JpaRepository<Task, Long> {
+public interface TodoRepository extends JpaRepository<Task, String> {
 
     public Task findByTask(String task);
     public List<Task> findAll();
-    public Task getById(Long id);
+    public Task getById(String id);
 }

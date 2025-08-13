@@ -1,34 +1,30 @@
 package com.neueda.todoapp.service;
 
 import com.neueda.todoapp.model.Task;
+import com.neueda.todoapp.repository.TodoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class TodoService {
 
-    private final List<Task> taskList = new ArrayList<>();
+    @Autowired
+    private TodoRepository todoRepository;
 
     public List<Task> getAllTasks() {
-        return new ArrayList<>(taskList);
+        return todoRepository.findAll();
     }
 
     public Task getTask(String id) {
-        for (Task task : taskList) {
-            if (task.getId().equals(id)) {
-                return task;
-            }
-//            return null;
-        }
+        return todoRepository.getById(id);
     }
 
-    public Task addTask(String id, String task) {
-        Task addedTask = new Task(id, task);
-        taskList.add(addedTask);
-        return addedTask;
+    public Task addTask(Task task) {
+        return todoRepository.save(task);
     }
 
-    public Task deleteTask(String id) {
-
+    public void deleteTask(Task task) {
+        todoRepository.delete(task);
     }
 }
