@@ -19,7 +19,7 @@ public class TodoController {
     return todoService.getAllTasks();
 }
 @GetMapping
-    public Task getTask(@PathVariable String id) {
+    public Task getTask(@PathVariable Long id) {
     return todoService.getTask(id);
 }
 @PostMapping
