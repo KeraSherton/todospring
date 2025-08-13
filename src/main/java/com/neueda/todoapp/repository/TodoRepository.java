@@ -8,7 +8,7 @@ import java.util.List;
 @Repository
 public interface TodoRepository extends JpaRepository<Task, String> {
 
-    public Task findByTask(String task);
-    public List<Task> findAll();
-    public Task getById(String id);
+//    public Task findByTask(String task);
+//    public List<Task> findAll();
+//    public Task getById(String id);
 }
