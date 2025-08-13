@@ -26,4 +26,8 @@ public class TodoController {
     public Task addTask(@RequestBody Task task){
     return todoService.addTask(task);
 }
+@DeleteMapping("/{id}")
+    public void delete(@PathVariable Task task) {
+    todoService.deleteTask(task);
+}
 }
