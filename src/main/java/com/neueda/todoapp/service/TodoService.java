@@ -18,7 +18,17 @@ public class TodoService {
             if (task.getId().equals(id)) {
                 return task;
             }
-            return null;
+//            return null;
         }
+    }
+
+    public Task addTask(String id, String task) {
+        Task addedTask = new Task(id, task);
+        taskList.add(addedTask);
+        return addedTask;
+    }
+
+    public Task deleteTask(String id) {
+
     }
 }
